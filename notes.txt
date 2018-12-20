@@ -1,0 +1,41 @@
+Address
+Postcode
+Asking price
+Bedrooms
+Date Listed
+Description
+Last Sold - Date
+Last Sold - Price
+Last Sold v Asking Price
+Tenure
+
+Vendor Names
+Vendor House Number for Sale
+Vendor Telephone Landline
+Vendor Mobile phone number
+VENDOR EMAIL ADDRESS
+House without Number listing
+Name of Estate Agents selling this property
+Estate Agent address details
+Estate Agent Phone number
+Property Features
+Full description of Property:
+PROPERTY DETAILS: DESCRIPTIONS
+MEASUREMENTS - Foot/Inches
+MEASUREMENTS - Metres
+Key features
+
+
+
+########items.py
+    Vendor = scrapy.Field()
+    Vendor_Telephone_Landline = scrapy.Field()
+    Vendor_Phone_Number = scrapy.Field()
+    # Vendor_Email_Address = scrapy.Field()
+
+
+
+######rightmove.py
+     item['Vendor'] = response.xpath('//a[@id="aboutBranchLink"]/strong/text()').extract_first()
+        item['Vendor_Telephone_Landline'] = response.xpath('//a[contains(@href, "tel")]/strong/text()').extract_first()
+        item['Vendor_Phone_Number'] = response.xpath('//a[contains(@href, "tel")]/strong/text()').extract_first()
